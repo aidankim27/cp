@@ -1,22 +1,29 @@
 #include <iostream>
-#define ll long long
-using namespace std;
+#include <string>
+#include <vector>
+#include <algorithm>
 
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        ll x, y, z;
-        cin >> x >> y >> z;
-        if (y != z)
-        {
-            cout << "NO\n";
-        }
-        else
-        {
-            cout << "YES " << x << " " << x << " " << z << "\n";
-        }
-    }
+using namespace std;
+//three pairwise max
+void solve(){
+	vector<int> a;
+	for(int i=0;i<3;++i){
+		int h;
+		cin>>h;
+		a.push_back(h);
+	}
+	sort(a.begin(),a.end());
+	if(a[1]!=a[2]){
+		cout<<"NO";
+		return;
+	}
+	cout<<"YES\n"<<a[0]<<" "<<a[0]<<" "<<a[2];
+}
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		solve();
+		cout<<endl;
+	}
 }
